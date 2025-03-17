@@ -24,7 +24,7 @@ const courses = [
 
 function generateList() {
     const ul = document.querySelector(".list-group"); 
-    //ul
+    ul.innerHTML = "";
     courses.forEach( (course) => {
         const li = document.createElement("li");
         li.classList.add("list-group-item");
@@ -46,4 +46,16 @@ function generateList() {
 };
 
 
-generateList();
+// generateList();
+
+window.addEventListener("load", generateList); //we only add reference to func the eventlist runs the func accordingly
+//the two methods both work the same
+
+
+//i want to add a functionality so that on pressing the button we can sort based on the prices
+const button = document.querySelector(".sort-btn");
+button.addEventListener("click", () => {
+    courses.sort( (a, b) => a.price-b.price );
+    //to generate new list after sorting -
+    generateList();
+});
