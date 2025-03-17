@@ -1,6 +1,4 @@
 //LEC - 47 
-
-
 const courses = [
     {
         name: "Complete ReactJS Course",
@@ -25,7 +23,8 @@ const courses = [
 // </li>
 
 function generateList() {
-    const ul = document.querySelector(".list-group"); //ul
+    const ul = document.querySelector(".list-group"); 
+    //ul
     courses.forEach( (course) => {
         const li = document.createElement("li");
         li.classList.add("list-group-item");
